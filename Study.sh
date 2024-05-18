@@ -1,4 +1,7 @@
-# !/usr/bin/bash   
+#!/usr/bin/env bash 
+# Changed #!/usr/bin/bash to #!/usr/bin/env bash for better portability.
+# Script to demonstrate various shell scripting concepts
+
 # # comment multiple lines cntrl + / same for uncomment
 # cd /mnt/c/Users/Progressive/Desktop        ./Study.sh 
 
@@ -13,8 +16,10 @@ mer=dada #variable declrtn there mustnt be space , variable name musnt start wit
 echo the variable name is $mer # this is how you echo variable inclusive strings
 a=10
 b=21
-c=a*b
+# Corrected variable assignments and arithmetic operations 
+c=$((a * b))
 echo the multiplication of a and b is $c #this didnt work as expected 
+
 #reading variables from user 
 echo "please enter a name; "
 read name #this functin read from user 
@@ -89,7 +94,7 @@ echo $((n1 % n2))
  
 
  #switch and case 
-female_name=$1  #remeber this takes argument
+female_name=$1  #remeber this takes an argument
 case $female_name in 
  "tade")
     echo "$female_name is a good female name" ;;
@@ -167,7 +172,7 @@ select name in books drugs cars
     books)
        select book in Quran ajrumiyyah sarfu_kaafi 
          do
-         #echo "you want to buy $book";;
+         echo "you want to buy $book";;
          done 
     drugs)
        select drug in paracetamol vencik panadol 
